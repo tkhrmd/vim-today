@@ -16,7 +16,7 @@ function! today#open(...)
   endif
 
   let l:fpath = expand(s:dir . '/' . l:fname)
-  execute 'edit' l:fpath
+  setlocal undoreload=0 | execute 'edit' l:fpath
 endfunction
 
 function! today#complete_memos(arglead, cmdline, cursorpos)
